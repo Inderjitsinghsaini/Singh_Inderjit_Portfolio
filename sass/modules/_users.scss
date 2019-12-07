@@ -1,0 +1,81 @@
+
+
+
+.my_intro {
+    flex: 0 1 200px;
+    text-align: center;
+    padding: 8px;
+    margin-top: 80px;
+    height:auto;
+}
+
+
+    .my-avatar { width: 347px; height:462px; border-radius: 10px;   border:3px black solid; border-color:grey;float:center; }
+    
+    #myName
+    {
+        display:flex;
+        flex-direction:row;
+       
+        
+    }
+
+    #firstName
+    {
+        font-size:50px;
+        font-family:helvetica,arial,sans-serif;
+        color:#ffffff;
+        letter-spacing:2px;
+        float:center;
+       
+    }
+    
+
+    #lastName
+    {
+        font-size:50px;
+        font-family:helvetica,arial,sans-serif;
+        color:#000000;
+        letter-spacing:2px;
+        margin-left: 10px;
+    }
+    
+   #myDescription
+   {
+     font-size:20px;
+     font-family: Helvetica, arial, sans-serif;
+     line-height: 30px;  
+   }
+
+
+    .team { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    
+
+        .u-link { 
+            display: block; 
+            //width: 150px;  
+            text-decoration: none;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+        }
+
+        h1, h3 { margin: 5px 0; }
+    }
+
+
+@media screen and (min-width: 900px) {
+    .team {
+        .user-panel { 
+            flex: 1 1;
+
+            .u-avatar { max-width: 300px; }
+        }
+    }
+}
+
