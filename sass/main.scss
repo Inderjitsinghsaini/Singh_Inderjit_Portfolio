@@ -1,0 +1,85 @@
+@import '_vars';
+@import 'modules/_navbar';
+@import 'modules/_users';
+@import 'modules/_lightbox';
+
+@import 'modules/errors'; // error page
+
+body {
+    color: $main-color;
+    background-color: $body-bg;
+}
+
+h1{color:black}
+
+.panel { min-height: 80vh; }
+
+.panel:nth-child(odd) {
+    width:100%;
+    background-color: #555555;
+    color: white;
+}
+
+#to-top { position: fixed; bottom: 10px; right: 10px; display: none; }
+
+
+.container
+{
+    margin:0 auto;
+    text-align:center;
+}
+
+.p-name
+{
+    font-size:20px;
+    letter-spacing:2px;
+    font-family:helvetica,arial,sans-serif;
+    font-size: 100px;
+}
+
+.introText
+{
+    font-size:25px;
+    font-weight:20px;
+    font-family:helvetica,arial,sans-serif;
+    text-align:center;
+    color:black
+}
+.my-logo
+{
+    width:145px;
+    height:119px;
+    
+}
+
+#socialmedia
+{
+    margin-top: 12px;
+}
+    
+
+#socialmedia li {
+        display: inline-block;
+        padding:3px;
+        
+    }
+#socialmedia li img
+{
+    width:52px;
+        height:51px;
+}
+
+.user-panel-heading
+{
+    font-size:40px;
+    letter-spacing:2px;
+    font-family:helvetica,arial,sans-serif;
+}
+
+.error
+{
+    width:100px;
+    height:100px;
+}
+
+@import 'modules/_footer'
