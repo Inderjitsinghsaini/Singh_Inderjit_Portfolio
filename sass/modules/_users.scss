@@ -122,6 +122,22 @@
     height:30px;
     margin-top:50px;
 }
+
+
+
+
+
+
+.portfolioPiece
+{
+    display:flex;
+    flex-direction:column;
+}
+
+
+
+
+
 #portfolio1
 
 {
@@ -152,7 +168,10 @@
     margin-top:5px;
 }
 
-
+#portfolioType
+{
+    font-size:15px;
+}
 
 
 

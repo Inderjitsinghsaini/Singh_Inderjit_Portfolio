@@ -1,14 +1,11 @@
-# Favourite Things
+# INDERJIT SINGH PORTFOLIO
 
 
 
 ## Description
 
-Design a mobile-first one page web application that highlights your favourite things. Use images, video, 3D - anything at all. You must have a database with at least 5 columns - you MUST have title / heading (text), image(s) and descriptive text. The last two columns
-are your choice. Include a landing / splash page and a dynamic route to showcase each of your favourite things. You should have at least three views, one of which should be an error.hbs page. Use at least 2 routes. One of these routes MUST be dynamic with a route parameter.
-Use modern tools and techniques to generate the required assets. Use a Github repo; use Express to generate the application and the mysql package to connect to a database. Retrieve data using route parameters, and render the appropriate view with the query
-response as the data resource. Use SASS and the usual build tools (Gulp, NPM) for automation / compiling finished web-ready assets.
-You can continue to use Handlebars as your templating engine, or explore another system like EJS or Pug.
+This is the final integrated project of our third semester and we are making our own portfolio website.
+Yes, we will have our own portfolio now to showcase our previous cool stuff that we have done recently.
 
 ## Getting Started
 
@@ -24,13 +21,14 @@ You can continue to use Handlebars as your templating engine, or explore another
 
 * cd to the directory of your choice
 * Use "npm install" to install the necessary dependancies
-* Hack away!
+* you are in
 
 ## Authors
 
 Contributors names and contact info
 
 Inderjit Singh
+Singhinderjit.com
 
 ## License
 
