@@ -1,29 +1,56 @@
 <section id="section1" class="panel">
 
-      {{#each user}}
+      {{#each homepage}}
     <div class="my_intro">
-       <img src="images/{{Avatar}}" alt="avatar" class="my-avatar">
+       <img src="images/{{Image}}" alt="avatar" class="my-avatar">
             
            
 
             <h1 id="firstName">{{firstName}}</h1> <h1 id="lastName">{{lastName}}</h1>
             <p id="myDescription">{{Description}}</p>
     </div>
-    {{/each}}
+    
 
 </section>
  <section id="section2" class="panel">
-     {{#each userskill}}
     <div class="my_skills">
-       <img src="images/{{svg}}" alt="skill" class="my-skills">
+
+        <h1 class="sectionhead">I CAN DO</h1>
+
+       <img src="images/{{Skill1Image}}" alt="skill" class="my-skills">
             
-            <h1 id="Type">{{Type}}</h1>
+            <h1 id="Type">{{Skill1Type}}</h1>
+
+            <img src="images/{{Skill2Image}}" alt="skill" class="my-skills">
+            
+            <h1 id="Type">{{Skill2Type}}</h1>
+
+            <img src="images/{{Skill3Image}}" alt="skill" class="my-skills">
+            
+            <h1 id="Type">{{Skill3Type}}</h1>
+
+    </section>
 
     </div>
-    {{/each}}
+    <!---videolightbox-->
+        <section id="section3" class="panel">
+            <h1 class="sectionhead">SOME GLIMPSES OF MY RECENT WORK</h1>
+        <div class="lightbox-div"><img src="images/play-button.svg" class="playIcon"></div>
+        <section class="lightbox">
+        <a href="#" class="close-lightbox">X</a>
+        <video  class="reel-video" src="video/{{showreel}}" type="video/mp4" onended="videoEnded()"></video>
+        <section class ="video-controls">
+            <i class="fas fa-play"></i>
+            <i class="fas fa-pause-circle"></i>
+            <i class="fas fa-backward"></i>
+        </section>
+    </section>
+
+    <section id="portfolioSection" class="panel">
+
+        <div id="portfolio1"><img src="images/{{portfolioImg1}}" class="portfolio"></div>
 
 
- </section>
 
 
 
@@ -32,45 +59,28 @@
 
 
 
-
-
-
-<section id="section3" class="panel">
-    <h1 class="user-panel-heading">
-        
-    </h1>
-
+    </section>
     
 
 
-    <div class="team">
-        <!-- loop through all our team members and put their info on the page -->
+    {{/each}}
 
-      
-        <div class="my_projects">
 
-             <a href="{{ID}}" class="u-link">
-                See More Info
-            </a>
-            
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
 
         
-        
-    </div>
-    </div>
-
-    <!-- this will be filled in on the client side when we render our AJAX data -->
-    <section class="lightbox">
-        <span class="close">x</span>
-        <div class="sidebar">
-            <img src="" alt="larger bio image">
-        </div>
-
-        <div class="lb-content">
-            <!-- render the database content here -->
-
-
-        </div>
-    </section>
-</section>
+    
