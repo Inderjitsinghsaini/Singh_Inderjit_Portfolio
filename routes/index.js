@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     // should really get the user data here and then fetch it thru, but let's try this asynchronously
     console.log('at the main route');
 
-    let query = "SELECT *  FROM tbl_my_bio";
+    let query = "SELECT *  FROM tbl_homepage";
 
     sql.query(query, (err, result) => {
         if (err) { throw err; console.log(err); }
@@ -16,24 +16,7 @@ router.get('/', (req, res) => {
         console.log(result); // should see objects wrapped in an array
 
         // render the home view with dynamic data
-        res.render('home', { user: result });
-    })
-})
-
-//skills section
-router.get('/', (req, res) => {
-    // should really get the user data here and then fetch it thru, but let's try this asynchronously
-    console.log('at the skills route');
-
-    let query = "SELECT *  FROM tbl_i_can_do";
-
-    sql.query(query, (err, result) => {
-        if (err) { throw err; console.log(err); }
-
-        console.log(result); // should see objects wrapped in an array
-
-        // render the home view with dynamic data
-        res.render('home', { userskill: result });
+        res.render('home', { homepage: result });
     })
 })
 

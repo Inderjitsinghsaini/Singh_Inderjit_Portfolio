@@ -1,60 +1,62 @@
 // this is a partially revealing module pattern - just a variation on what we've already done
 
-const myVM = (() => {
-    // get the user buttons and fire off an async DB query with Fetch
-    let userButtons = document.querySelectorAll('.u-link'),
-        lightBox = document.querySelector('.lightbox');
+(() => {
+	console.log("My Js is working")
 
-        //create the social media list
-        function renderSocialMedia(media) {
-            return `<ul class="u-social">
-                ${media.map(item => `<li>${item}</li>`).join("")}
-                    </ul>`
-        }
+	//variable stack -> get the shields / sigils first
+	const lightboxDiv = document.querySelectorAll('.lightbox-div'),
+		lightBox = document.querySelector('.lightbox'),
+		closeButton = document.querySelector('.close-lightbox'),
+		showReel = document.querySelector('.reel-video'),
+		pauseButton = document.querySelector('.fa-pause-circle'),
+		playButton = document.querySelector('.fa-play'),
+		rewindButton = document.querySelector('.fa-backward');
 
-    function parseUserData(person) {
-        let targetDiv = lightBox.querySelector('.lb-content'),
-            targetImg = lightBox.querySelector('img');
+		    //pause the video on a click
+		    function pauseVideo(){
+		    	showReel.pause();
+		    	console.log('paused')
+		    }
 
-        let bioContent = `
-            <p>${person.bio}</p>
-            <h4>Social Media:</h4>
-            <!-- loop thru social media stuff here-->
-            ${renderSocialMedia(person.social)}
-        `;
+		    function playVideo(){
+		    	showReel.play();
+		    	console.log('played')
+		    }
+		    function rewindVideo(){
+		    	showReel.currentTime=0;
+		    	console.log('startOver')
+		    }
+		    //write the other fun
+	function popLightBox(){
+		lightBox.classList.add('show-lightbox')
+		showReel.load();
 
-        targetDiv.innerHTML = bioContent;
-        targetImg.src = person.currentSrc;
+		showReel.play();
+	}
+		function closeLightBox(event){
+			event.preventDefault(); //e and event mean the same thing they are event handlers
+			
+			lightBox.classList.remove('show-lightbox');
+			showReel.currentTime = 0;
+			showReel.pause();
+		}
+		function videoEnded(event){
+			event.preventDefault();
 
-        lightBox.classList.add('show-lb');
-    }
-   
-    function getUserData(event) {
-        event.preventDefault();
-        //debugger;
-        //1,2, or 3 depending on which anchor tag you click
-        let url = `/users/${this.getAttribute('href')}`,
-            currentImg = this.previousElementSibling.getAttribute('src');
+			lightBox.classList.remove('show-lightbox')
+			showReel.currentTime = 0;
+			showReel.pause();
+			alert('The video is Ended')
+			console.log('video Ended')
+		}
 
-        //this goes and tetches the database content (or an API endp)
-        //that's why it's called a fetch
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+		
+		lightboxDiv.forEach(div => div.addEventListener("click", popLightBox));
+		closeButton.addEventListener("click", closeLightBox);
 
-                data.currentSrc = currentImg;
-                parseUserData(data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
-
-    userButtons.forEach(button => button.addEventListener("click", getUserData));
-
-    //wire up the lightbox close button
-    lightBox.querySelector('.close').addEventListener("click", function() {
-        lightBox.classList.remove('show-lb');
-    });
-})();
+		showReel.addEventListener('ended', closeLightBox);
+		showReel.addEventListener('ended', videoEnded);
+		pauseButton.addEventListener("click", pauseVideo);
+		playButton.addEventListener("click", playVideo);
+		rewindButton.addEventListener("click", rewindVideo);
+	})();
